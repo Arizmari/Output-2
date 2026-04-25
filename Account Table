@@ -11,25 +11,22 @@ namespace AccountTable
     {
         public static void Main()
         {
-            string[] AccNum = new string[5] { "0123-4567-8901", "2345-6789-0123", "3456-7890-1234", "4567-8901-2345", "5678-9012-3456" };
-            string[] AccName = new string[5] { "Roel Richard", "Donie Marie", "Railee Darrel", "Railynne Dessirei", "Raine Dessirei" };
-            string[] Balance = new string[5] { "5000.00", "0.00", "10000", "2500", "10000" };
-            string[] PinNum = new string[5] { "1111", "2222", "3333", "4444", "5555" };
-            string[] Status = new string[5] { "Active", "Blocked", "Active", "Active", "Active" };
-
-            Console.WriteLine("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            string[] Acc1, Acc2, Acc3, Acc4, Acc5;
+        Acc1 = new string[5] {"0123-4567-8901", "Roel Richard", "5000.00", "1111", "Active"};
+        Acc2 = new string[5] {"2345-6789-0123", "Donie Marie", "0.00", "2222", "Blocked"};
+        Acc3 = new string[5] {"3456-7890-1234", "Railee Darrel", "10000", "3333", "Active"};
+        Acc4 = new string[5] {"4567-8901-2345", "Railynne Dessirei", "2500", "4444", "Active"};
+        Acc5 = new string[5] {"5678-9012-3456", "Raine Dessirei", "10000", "5555", "Active"};
+        
+        Console.WriteLine("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
             Console.WriteLine("|  Account Number  |   Account Name   |  Balance  |  Pin Number  |   Status   |");
             Console.WriteLine("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
-            Console.WriteLine("|  " + AccNum[0] + "  |   " + AccName[0] + "   |  "  + Balance[0] + "  |     " + PinNum[0] + "     |   " + Status[0] + "   |");
-            Console.WriteLine("|  " + AccNum[1] + "  |   " + AccName[1] + "    |    " + Balance[1] + "   |     " + PinNum[1] + "     |   " + Status[1] + "  |");
-            Console.WriteLine("|  " + AccNum[2] + "  |  " + AccName[2] + "   |   " + Balance[2] + "   |     " + PinNum[2] + "     |   " + Status[2] + "   |");
-            Console.WriteLine("|  " + AccNum[3] + "  | " + AccName[3] + "|    " + Balance[3] + "   |     " + PinNum[3] + "     |   " + Status[3] + "   |");
-            Console.WriteLine("|  " + AccNum[4] + "  |  " + AccName[4] + "  |   " + Balance[4] + "   |     " + PinNum[4] + "     |   " + Status[4] + "   |");
-            Console.WriteLine("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
-
-            Array.ConvertAll (Balance, double.Parse);
-            
-            
+            Console.WriteLine("|  " + Acc1[0] + "  |   " + Acc1[1] + "   |  "  + Acc1[2] + "  |     " + Acc1[3] + "     |   " + Acc1[4] + "   |");
+            Console.WriteLine("|  " + Acc2[0] + "  |   " + Acc2[1] + "    |    " + Acc2[2] + "   |     " + Acc2[3] + "     |   " + Acc2[4] + "  |");
+            Console.WriteLine("|  " + Acc3[0] + "  |  " + Acc3[1] + "   |   " + Acc3[2] + "   |     " + Acc3[3] + "     |   " + Acc3[4] + "   |");
+            Console.WriteLine("|  " + Acc4[0] + "  | " + Acc4[1] + "|    " + Acc4[2] + "   |     " + Acc4[3] + "     |   " + Acc4[4] + "   |");
+            Console.WriteLine("|  " + Acc5[0] + "  |  " + Acc5[1] + "  |   " + Acc5[2] + "   |     " + Acc5[3] + "     |   " + Acc5[4] + "   |");
+            Console.WriteLine("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");           
             
         }
     }
