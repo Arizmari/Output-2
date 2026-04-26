@@ -1,0 +1,99 @@
+using System;
+using System.Runtime.ConstrainedExecution;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace AccountTable
+{
+
+    class Accounts
+    {
+        public static void Main()
+        {
+
+            string[] AccNum, AccName, Balance, PinNum, Status;
+            AccNum = new string[5] { "0123-4567-8901", "2345-6789-0123", "3456-7890-1234", "4567-8901-2345", "5678-9012-3456" };
+            AccName = new string[5] { "Roel Richard", "Donie Marie", "Railee Darrel", "Railynne Dessirei", "Raine Dessirei" };
+            Balance = new string[5] { "5000.00", "0.00", "10000", "2500", "10000" };
+            PinNum = new string[5] { "1111", "2222", "3333", "4444", "5555" };
+            Status = new string[5] { "Active", "Blocked", "Active", "Active", "Active" };
+
+            Console.WriteLine("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            Console.WriteLine("|  Account Number  |   Account Name   |  Balance  |  Pin Number  |   Status   |");
+            Console.WriteLine("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            Console.WriteLine("|  " + AccNum[0] + "  |   " + AccName[0] + "   |  " + Balance[0] + "  |     " + PinNum[0] + "     |   " + Status[0] + "   |");
+            Console.WriteLine("|  " + AccNum[1] + "  |   " + AccName[1] + "    |    " + Balance[1] + "   |     " + PinNum[1] + "     |   " + Status[1] + "  |");
+            Console.WriteLine("|  " + AccNum[2] + "  |  " + AccName[2] + "   |   " + Balance[2] + "   |     " + PinNum[2] + "     |   " + Status[2] + "   |");
+            Console.WriteLine("|  " + AccNum[3] + "  | " + AccName[3] + "|    " + Balance[3] + "   |     " + PinNum[3] + "     |   " + Status[3] + "   |");
+            Console.WriteLine("|  " + AccNum[4] + "  |  " + AccName[4] + "  |   " + Balance[4] + "   |     " + PinNum[4] + "     |   " + Status[4] + "   |");
+            Console.WriteLine("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+
+            Console.WriteLine("\n               " + "LOGIN" + "\n");
+            Console.Write("Enter your account number: ");
+            string? inputAcc = Console.ReadLine();
+
+            int index = -1;
+
+            for (int i = 0; i < AccNum.Length; i++)
+            {
+                if (inputAcc == AccNum[i])
+                {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index != -1)
+            {
+                if (Status[index] == "Blocked")
+                {
+                    Console.WriteLine("This account is blocked.");
+                }
+                else
+                {
+                    int attempts = 0;
+                    bool success = false;
+
+                    while (attempts < 3)
+                    {
+                        Console.Write("Enter your pin number: ");
+                        string? inputPin = Console.ReadLine();
+
+                        if (inputPin == PinNum[index])
+                        {
+                            Console.WriteLine("Login Successful!");
+                            success = true;
+                            break;
+                        }
+                        else
+                        {
+                            attempts++;
+                            Console.WriteLine("Incorrect PIN.");
+                        }
+                    }
+
+                    if (!success)
+                    {
+                        Console.WriteLine("CAPTURED CARD…. PLEASE CALL 143-44");
+                        Status[index] = "Blocked";
+                    }
+                }
+            }
+            
+            else
+            {
+                Console.WriteLine("Account number not found.");
+            }
+
+            /*else if (choice == "Q" || choice == "q")
+            {
+                Console.WriteLine("Program Closed.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+            }*/
+        }
+    }
+}
