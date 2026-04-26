@@ -49,5 +49,5 @@ Status = new string[5] {"Active", "Blocked", "Active", "Active", "Active"};
 
 Tasks:
 Group into Accounts
-Convert Status array into Bool
+Make login unavail if Active or Blocked
 */
