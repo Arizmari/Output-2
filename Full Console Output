@@ -248,10 +248,40 @@ class Program
 
             pinMenu.Render();
             Console.SetCursorPosition(18, Console.CursorTop);
-            string? pin = Console.ReadLine();
+            string pin = "";
+            ConsoleKeyInfo key;
 
-            if (pin?.ToLower() == "q")
-                return false;
+            while (true)
+            {
+                key = Console.ReadKey(true);
+
+                // Quit
+                if (key.KeyChar == 'q' || key.KeyChar == 'Q')
+                {
+                    Console.WriteLine();
+                    return false;
+                }
+
+                // Enter = submit
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    Console.WriteLine();
+                    break;
+                }
+                // Backspace
+                else if (key.Key == ConsoleKey.Backspace && pin.Length > 0)
+                {
+                    pin = pin.Substring(0, pin.Length - 1);
+                    Console.Write("\b \b");
+                }
+                // Normal input
+                else if (!char.IsControl(key.KeyChar))
+                {
+                    pin += key.KeyChar;
+                    Console.Write("*");
+                }
+            }
+
             if (inputAcc == "0000-000-0000")
             {
                 if (pin == "0000")
@@ -459,7 +489,7 @@ class Program
             if (double.TryParse(Console.ReadLine(), out double depositAmount))
             {
 
-                if (depositAmount > 100)
+                if (depositAmount >= 100)
                 {
 
                     currentBalance += depositAmount;
