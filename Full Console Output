@@ -722,8 +722,8 @@ class Program
         }
     }
 
-    //---------------- Customer Info ----------------
-    public static void CustomInfo(Func<int, string[]> callback)
+    //---------------- Account Info ----------------
+    public static void AccountInfo(Func<int, string[]> callback)
     {
         while (true)
         {
