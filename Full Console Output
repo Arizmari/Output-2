@@ -637,7 +637,7 @@ class Program
         {
             Console.Clear();
             var adminMenu = new Menu(
-                "SELECT TYPE OF TRANSACTION",
+                "ADMIN MENU",
                 new[] {
                     "1 - View Account Information",
                     "2 - Search Account",
@@ -648,7 +648,7 @@ class Program
                     "7 - Activate/Block Account",
                     "X - Cancel"
                 },
-                "Enter transaction type: "
+                "Enter Number: "
 
             );
 
