@@ -1010,7 +1010,7 @@ class Program
         }
     }
 
-    //---------------- Edit Account Info ----------------
+    //---------------- Edit Account PIN ----------------
 
     static void ChangePin()
     {
@@ -1071,7 +1071,7 @@ class Program
         }
     }
 
-    //---------------- Edit Account Info ----------------
+    //---------------- Edit Account Status ----------------
 
     static void SetStatus()
     {
